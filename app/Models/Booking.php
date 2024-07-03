@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Tipe extends Model
+class Booking extends Model
 {
-    protected $table            = 'tipes';
+    protected $table            = 'bookings';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'type', 'image_path', 'description', 'price'];
+    protected $allowedFields    = ['tour_date', 'paket_name', 'tipe_name', 'paket_price', 'tipe_price', 'price_total', 'name', 'user_id', 'from', 'invoice_path', 'status'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

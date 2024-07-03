@@ -30,4 +30,8 @@ $routes->group('', ['filter' => 'adminOnly'], function ($routes) {
 });
 $routes->group('', ['filter' => 'customerOnly'], function ($routes) {
     $routes->get('dashboard/booking', 'BookingController::index');
+    $routes->post('dashboard/booking', 'BookingController::create');
+    $routes->get('dashboard/booking/(:segment)', 'BookingController::upload/$1');
+    $routes->post('dashboard/booking/(:segment)', 'BookingController::uploadPost/$1');
+    $routes->get('dashboard/booking/(:segment)/cetak', 'BookingController::cetak/$1');
 });

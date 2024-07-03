@@ -19,8 +19,8 @@ class CreatePaketsTable extends Migration
                 'constraint' => '255',
             ],
             'price' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
+                'type'       => 'NUMERIC',
+                'constraint' => '65',
             ],
             'destination' => [
                 'type' => 'VARCHAR',

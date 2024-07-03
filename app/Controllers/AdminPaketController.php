@@ -30,7 +30,7 @@ class AdminPaketController extends BaseController
         $validation = \Config\Services::validation();
         $rules = [
             'name'     => 'required|max_length[255]',
-            'price'    => 'required|max_length[255]',
+            'price'    => 'required|numeric',
             'destination' => 'required|max_length[255]',
             'image' => [
                 'label' => 'Image File',
@@ -84,7 +84,7 @@ class AdminPaketController extends BaseController
         $paket = $paketModel->find($id);
         $rules = [
             'name'     => 'required|max_length[255]',
-            'price'    => 'required|max_length[255]',
+            'price'    => 'required|numeric',
             'destination' => 'required|max_length[255]',
             'image' => [
                 'label' => 'Image File',

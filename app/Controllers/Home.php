@@ -58,7 +58,7 @@ class Home extends BaseController
                 if ($user['role'] == 'admin') {
                     return redirect()->to('admin/paket');
                 }
-                return redirect()->to('dashboard');
+                return redirect()->to('dashboard/booking');
             } else {
                 $session->setFlashdata('error', 'Email atau password salah.');
                 return redirect()->to('/login')->withInput();

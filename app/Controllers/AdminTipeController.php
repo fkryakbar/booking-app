@@ -25,6 +25,7 @@ class AdminTipeController extends BaseController
         $rules = [
             'name'     => 'required|max_length[255]',
             'type'    => 'required|max_length[255]',
+            'price'    => 'required|numeric',
             'image' => [
                 'label' => 'Image File',
                 'rules' => 'uploaded[image]'
@@ -43,6 +44,7 @@ class AdminTipeController extends BaseController
         }
 
         $postData = $this->request->getPost();
+        // dd($postData);
         $img = $this->request->getFile('image');
         if (!$img->hasMoved()) {
             $newName = $img->getRandomName();
@@ -56,6 +58,7 @@ class AdminTipeController extends BaseController
             $data = [
                 'name' => $postData['name'],
                 'type' => $postData['type'],
+                'price' => $postData['price'],
                 'image_path' => 'uploads/' . $newName,
                 'description' => $postData['description'],
             ];
@@ -85,6 +88,7 @@ class AdminTipeController extends BaseController
         $rules = [
             'name'     => 'required|max_length[255]',
             'type'    => 'required|max_length[255]',
+            'price'    => 'required|numeric',
             'image' => [
                 'label' => 'Image File',
                 'rules' => 'if_exist|uploaded[image]'
@@ -107,6 +111,7 @@ class AdminTipeController extends BaseController
         $newData = [
             'name' => $postData['name'],
             'type' => $postData['type'],
+            'price' => $postData['price'],
             'image_path' => $tipe['image_path'],
             'description' => $postData['description'],
         ];

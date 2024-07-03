@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTipesTable extends Migration
+class CreateBookingTable extends Migration
 {
     public function up()
     {
@@ -18,21 +18,46 @@ class CreateTipesTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'type' => [
+            'user_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'price' => [
+            'tour_date' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'from' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'paket_name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'tipe_name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'paket_price' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'tipe_price' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'price_total' => [
                 'type'       => 'NUMERIC',
                 'constraint' => '65',
             ],
-            'image_path' => [
+            'status' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'description' => [
-                'type'       => 'TEXT',
+            'invoice_path' => [
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -44,11 +69,11 @@ class CreateTipesTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('tipes');
+        $this->forge->createTable('bookings');
     }
 
     public function down()
     {
-        $this->forge->dropTable('tipes');
+        $this->forge->dropTable('bookings');
     }
 }
